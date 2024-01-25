@@ -11,7 +11,7 @@ RSpec.describe Robot do
 
       it "moves the robot north" do
         expect { subject.move!(command) }
-          .to change { subject.final_coordinates }
+          .to change { subject.coordinates }
           .from(starting_coordinates)
           .to([5, 4])
       end
@@ -22,7 +22,7 @@ RSpec.describe Robot do
 
       it "moves the robot east" do
         expect { subject.move!(command) }
-          .to change { subject.final_coordinates }
+          .to change { subject.coordinates }
           .from(starting_coordinates)
           .to([6, 5])
       end
@@ -33,7 +33,7 @@ RSpec.describe Robot do
 
       it "moves the robot south" do
         expect { subject.move!(command) }
-          .to change { subject.final_coordinates }
+          .to change { subject.coordinates }
           .from(starting_coordinates)
           .to([5, 6])
       end
@@ -44,7 +44,7 @@ RSpec.describe Robot do
 
       it "moves the robot west" do
         expect { subject.move!(command) }
-          .to change { subject.final_coordinates }
+          .to change { subject.coordinates }
           .from(starting_coordinates)
           .to([4, 5])
       end

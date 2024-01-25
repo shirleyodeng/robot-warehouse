@@ -5,12 +5,12 @@ class Robot
 
   VALID_COMMANDS = %w[N E S W].freeze
 
-  attr_reader :final_coordinates, :starting_coordinates
+  attr_reader :coordinates, :starting_coordinates
 
   def initialize(starting_coordinates = [0, 0])
     validate_coordinates!(starting_coordinates)
 
-    @final_coordinates = starting_coordinates.dup
+    @coordinates = starting_coordinates.dup
     @starting_coordinates = starting_coordinates
   end
 
@@ -19,16 +19,16 @@ class Robot
 
     case command
     when "N"
-      final_coordinates[1] -= 1
+      coordinates[1] -= 1
     when "E"
-      final_coordinates[0] += 1
+      coordinates[0] += 1
     when "S"
-      final_coordinates[1] += 1
+      coordinates[1] += 1
     when "W"
-      final_coordinates[0] -= 1
+      coordinates[0] -= 1
     end
 
-    validate_coordinates!(final_coordinates)
+    validate_coordinates!(coordinates)
   end
 
   private

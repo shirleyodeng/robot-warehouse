@@ -13,7 +13,7 @@ RSpec.describe RobotController do
     it "moves the robot according to the command sequence" do
       subject.call(command_sequence)
 
-      expect(robot.final_coordinates).to eq([6, 3])
+      expect(robot.coordinates).to eq([6, 3])
     end
 
     it "returns true" do
